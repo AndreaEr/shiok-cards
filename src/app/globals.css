@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --hawker-red: #DC2626;
+  --hawker-cream: #FEF3C7;
+  --hawker-brown: #451A03;
+  --hawker-gold: #F59E0B;
+  --hawker-green: #16A34A;
+}
+
+body {
+  background-color: var(--hawker-cream);
+  color: var(--hawker-brown);
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-matched {
+  animation: matchPulse 0.4s ease-in-out;
+}
+
+@keyframes matchPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
