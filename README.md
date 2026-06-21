@@ -31,17 +31,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 | `npm run start` | Serve production build locally |
 | `npm run lint` | Run ESLint |
 
-## Deploy
-
-This project uses `output: "export"` in Next.js config, producing a fully static site. No server required.
-
-**Vercel (recommended):**
-1. Push to GitHub
-2. Import the repo on [vercel.com](https://vercel.com)
-3. It auto-detects Next.js and deploys on every push
-
-**Other static hosts:** Deploy the `out/` folder to Netlify, GitHub Pages, Cloudflare Pages, or any CDN.
-
 ## Project Structure
 
 ```
